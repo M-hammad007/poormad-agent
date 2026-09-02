@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PoorMad — Quickstart</title>
+<meta name="description" content="Run your first self-improving agent session in under five minutes." />
+<link rel="icon" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css?v=20260829m" />
+<script defer src="assets/motion.js?v=20260829m"></script>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="topnav-in">
+    <a class="logo" href="index.html"><span class="moon"></span>POORMAD</a>
+    <nav class="topnav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="docs.html" class="active">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="topnav-right">
+      <a class="btn btn-ghost" href="https://github.com/Tayyaba22/poormad-agent" target="_blank" rel="noopener" data-magnetic="0.2">GitHub</a>
+      <a class="btn" href="https://portal.xingabot.com" target="_blank" rel="noopener" data-magnetic="0.2">Enter Portal →</a>
+    </div>
+  </div>
+</header>
+<div class="docs">
+
+<aside class="sidebar">
+  <div class="grp"><div class="gh">Getting Started</div>
+    <a href="docs.html">Introduction</a>
+    <a href="docs-install.html">Installation</a>
+    <a href="docs-quickstart.html">Quickstart</a>
+    <a href="docs-configuration.html">Configuration</a>
+  </div>
+  <div class="grp"><div class="gh">Core Concepts</div>
+    <a href="docs-architecture.html">Architecture</a>
+    <a href="docs-skills.html">Skills</a>
+    <a href="docs-memory.html">Memory</a>
+    <a href="docs-gateway.html">Gateway &amp; Protocol</a>
+  </div>
+  <div class="grp"><div class="gh">Surfaces</div>
+    <a href="docs-cli.html">CLI</a>
+    <a href="docs-desktop.html">Desktop App</a>
+    <a href="docs-portal.html">Web Portal</a>
+    <a href="docs-platforms.html">Messaging Platforms</a>
+  </div>
+  <div class="grp"><div class="gh">Guides</div>
+    <a href="docs-providers.html">Models &amp; Providers</a>
+    <a href="docs-deploy.html">Self-Hosting</a>
+    <a href="docs-security.html">Security &amp; Privacy</a>
+    <a href="docs-cli-reference.html">CLI Reference</a>
+  </div>
+</aside>
+<main class="content">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="docs.html">Docs</a> / Getting Started</div>
+  <h1 data-reveal="fade-up" data-reveal-delay="0">Quickstart</h1>
+  <p class="lede">Run your first self-improving agent session in under five minutes.</p>
+
+<p>Run your first agent session end to end in under five minutes.</p>
+<h2 id="auth" data-reveal="fade-up" data-reveal-delay="80">1. Point at a model</h2>
+<p>PoorMad is provider-agnostic. Set your provider and API key in the config (or environment):</p>
+<pre><span class="c"># config.yaml (recommended)</span>
+provider: openai
+model: gpt-4o-mini
+
+<span class="c"># or environment</span>
+<span class="k">export</span> POORMAD_API_KEY=sk-...</pre>
+<p>See <a class="inline" href="docs-providers.html">Models &amp; Providers</a> for the full list of supported providers and how to use a local model.</p>
+<h2 id="run" data-reveal="fade-up" data-reveal-delay="160">2. Run the agent</h2>
+<pre>poormad</pre>
+<p>You land in an interactive session. Try a real task:</p>
+<pre><span class="c">&gt;</span> Summarize the last 20 lines of my shell history and suggest three aliases.</pre>
+<h2 id="skills" data-reveal="fade-up" data-reveal-delay="240">3. Watch it learn</h2>
+<p>When you repeat a class of task, ask the agent to capture it as a skill:</p>
+<pre><span class="c">&gt;</span> Save what you just did as a skill called "shell-audit"</pre>
+<p>The skill is written to your PoorMad home and reused on future sessions. Read more in <a class="inline" href="docs-skills.html">Skills</a>.</p>
+<h2 id="surfaces" data-reveal="fade-up" data-reveal-delay="320">4. Connect other surfaces</h2>
+<ul>
+  <li><strong>Desktop:</strong> open the app — it finds your local gateway automatically.</li>
+  <li><strong>Portal:</strong> start the dashboard server and open the browser UI.</li>
+  <li><strong>Messaging:</strong> link Telegram, Discord, or Slack in <a class="inline" href="docs-platforms.html">Messaging Platforms</a>.</li>
+</ul>
+<h2 id="next" data-reveal="fade-up" data-reveal-delay="400">Where to go next</h2>
+<ul>
+  <li><a class="inline" href="docs-configuration.html">Configuration</a> — every setting, explained.</li>
+  <li><a class="inline" href="docs-memory.html">Memory</a> — how cross-session recall works.</li>
+  <li><a class="inline" href="docs-cli-reference.html">CLI Reference</a> — every command.</li>
+</ul>
+
+  <div class="nextprev">
+    <a href="docs-install.html"><span class="np-t">Previous</span>Installation</a>
+    <a href="docs-configuration.html" style="text-align:right"><span class="np-t">Next</span>Configuration</a>
+  </div>
+</main>
+<aside class="toc">
+  <div class="th">On this page</div>
+  <a class="" href="#auth">Point at a model</a>
+  <a class="" href="#run">Run the agent</a>
+  <a class="" href="#skills">Watch it learn</a>
+  <a class="" href="#surfaces">Connect other surfaces</a>
+  <a class="" href="#next">Where to go next</a>
+</aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div class="col" style="max-width:300px">
+      <a class="logo" href="index.html" style="margin-bottom:14px"><span class="moon"></span>POORMAD</a>
+      <p class="tag">The self-improving AI agent.<br/>When the light is blocked, the stars align.</p>
+    </div>
+    <div class="col"><h4>Product</h4><a href="products.html">Agent</a><a href="products.html">Desktop</a><a href="products.html">Portal</a><a href="products.html">Messengers</a></div>
+    <div class="col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="https://github.com/Tayyaba22/poormad-agent/releases" target="_blank" rel="noopener">Downloads</a></div>
+    <div class="col"><h4>Project</h4><a href="https://github.com/Tayyaba22/poormad-agent" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Tayyaba22/poormad-agent/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a><a href="https://portal.xingabot.com" target="_blank" rel="noopener">Portal login</a></div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 PoorMad · built by one person, from one room.</span>
+    <span class="magic">MIT licensed · yours only</span>
+  </div>
+</footer>
+</body>
+</html>

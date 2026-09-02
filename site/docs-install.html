@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PoorMad — Installation</title>
+<meta name="description" content="Install the PoorMad agent core, desktop app, and portal on any platform." />
+<link rel="icon" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css?v=20260829m" />
+<script defer src="assets/motion.js?v=20260829m"></script>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="topnav-in">
+    <a class="logo" href="index.html"><span class="moon"></span>POORMAD</a>
+    <nav class="topnav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="docs.html" class="active">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="topnav-right">
+      <a class="btn btn-ghost" href="https://github.com/Tayyaba22/poormad-agent" target="_blank" rel="noopener" data-magnetic="0.2">GitHub</a>
+      <a class="btn" href="https://portal.xingabot.com" target="_blank" rel="noopener" data-magnetic="0.2">Enter Portal →</a>
+    </div>
+  </div>
+</header>
+<div class="docs">
+
+<aside class="sidebar">
+  <div class="grp"><div class="gh">Getting Started</div>
+    <a href="docs.html">Introduction</a>
+    <a href="docs-install.html">Installation</a>
+    <a href="docs-quickstart.html">Quickstart</a>
+    <a href="docs-configuration.html">Configuration</a>
+  </div>
+  <div class="grp"><div class="gh">Core Concepts</div>
+    <a href="docs-architecture.html">Architecture</a>
+    <a href="docs-skills.html">Skills</a>
+    <a href="docs-memory.html">Memory</a>
+    <a href="docs-gateway.html">Gateway &amp; Protocol</a>
+  </div>
+  <div class="grp"><div class="gh">Surfaces</div>
+    <a href="docs-cli.html">CLI</a>
+    <a href="docs-desktop.html">Desktop App</a>
+    <a href="docs-portal.html">Web Portal</a>
+    <a href="docs-platforms.html">Messaging Platforms</a>
+  </div>
+  <div class="grp"><div class="gh">Guides</div>
+    <a href="docs-providers.html">Models &amp; Providers</a>
+    <a href="docs-deploy.html">Self-Hosting</a>
+    <a href="docs-security.html">Security &amp; Privacy</a>
+    <a href="docs-cli-reference.html">CLI Reference</a>
+  </div>
+</aside>
+<main class="content">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="docs.html">Docs</a> / Getting Started</div>
+  <h1 data-reveal="fade-up" data-reveal-delay="0">Installation</h1>
+  <p class="lede">Install the PoorMad agent core, desktop app, and portal on any platform.</p>
+
+<p>This guide covers installing the PoorMad agent core on Linux, macOS, and Windows, plus the desktop app and the web portal.</p>
+<h2 id="requirements" data-reveal="fade-up" data-reveal-delay="80">Requirements</h2>
+<ul>
+  <li><strong>Python</strong> 3.11 or newer (3.13 recommended).</li>
+  <li><strong>pip</strong> and a virtual environment tool (venv or uv).</li>
+  <li>Network access to your chosen model provider (or a local model server).</li>
+  <li>~300 MB disk for the agent core; more for caches and skills.</li>
+</ul>
+<div class="callout warn"><span class="ct">Heads up</span>On systems with PEP 668 enforcement (recent Debian/Ubuntu/Fedora), install into a virtual environment or use <code>uv</code> — do not <code>pip install</code> into the system Python.</div>
+<h2 id="pip" data-reveal="fade-up" data-reveal-delay="160">Install with pip</h2>
+<pre><span class="c"># create and activate a venv</span>
+python3 -m venv ~/.venv/poormad
+<span class="k">source</span> ~/.venv/poormad/bin/activate
+
+<span class="c"># install</span>
+pip install --upgrade pip
+pip install poormad-agent</pre>
+<h2 id="uv" data-reveal="fade-up" data-reveal-delay="240">Install with uv (recommended)</h2>
+<pre>uv venv
+<span class="k">source</span> .venv/bin/activate
+uv pip install poormad-agent</pre>
+<h2 id="script" data-reveal="fade-up" data-reveal-delay="320">Install script (Linux/macOS)</h2>
+<pre>curl -fsSL https://raw.githubusercontent.com/Tayyaba22/poormad-agent/main/scripts/install.sh | bash</pre>
+<p>On Windows PowerShell use the equivalent install script:</p>
+<pre>iex (irm https://raw.githubusercontent.com/Tayyaba22/poormad-agent/main/scripts/install.ps1)</pre>
+<h2 id="desktop" data-reveal="fade-up" data-reveal-delay="400">Desktop app</h2>
+<p>Download the native Windows (<code>.exe</code>) or macOS (<code>.dmg</code>) build from the <a class="inline" href="https://github.com/Tayyaba22/poormad-agent/releases" target="_blank" rel="noopener">releases page</a>. The desktop app bundles its own runtime and connects to your local agent (or a remote gateway you configure).</p>
+<h2 id="portal" data-reveal="fade-up" data-reveal-delay="480">Web portal</h2>
+<p>The web portal is a separate static front-end that talks to a running gateway. Host it yourself (see <a class="inline" href="docs-deploy.html">Self-Hosting</a>) or use <a class="inline" href="https://portal.xingabot.com" target="_blank" rel="noopener">portal.xingabot.com</a>.</p>
+<h2 id="verify" data-reveal="fade-up" data-reveal-delay="480">Verify the install</h2>
+<pre>poormad --version
+poormad --help</pre>
+<p>If both commands return output, you are ready for the <a class="inline" href="docs-quickstart.html">Quickstart</a>.</p>
+
+  <div class="nextprev">
+    <a href="docs.html"><span class="np-t">Previous</span>Introduction</a>
+    <a href="docs-quickstart.html" style="text-align:right"><span class="np-t">Next</span>Quickstart</a>
+  </div>
+</main>
+<aside class="toc">
+  <div class="th">On this page</div>
+  <a class="" href="#requirements">Requirements</a>
+  <a class="" href="#pip">Install with pip</a>
+  <a class="" href="#uv">Install with uv</a>
+  <a class="" href="#script">Install script</a>
+  <a class="" href="#desktop">Desktop app</a>
+  <a class="" href="#portal">Web portal</a>
+  <a class="" href="#verify">Verify</a>
+</aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div class="col" style="max-width:300px">
+      <a class="logo" href="index.html" style="margin-bottom:14px"><span class="moon"></span>POORMAD</a>
+      <p class="tag">The self-improving AI agent.<br/>When the light is blocked, the stars align.</p>
+    </div>
+    <div class="col"><h4>Product</h4><a href="products.html">Agent</a><a href="products.html">Desktop</a><a href="products.html">Portal</a><a href="products.html">Messengers</a></div>
+    <div class="col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="https://github.com/Tayyaba22/poormad-agent/releases" target="_blank" rel="noopener">Downloads</a></div>
+    <div class="col"><h4>Project</h4><a href="https://github.com/Tayyaba22/poormad-agent" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/Tayyaba22/poormad-agent/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a><a href="https://portal.xingabot.com" target="_blank" rel="noopener">Portal login</a></div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 PoorMad · built by one person, from one room.</span>
+    <span class="magic">MIT licensed · yours only</span>
+  </div>
+</footer>
+</body>
+</html>

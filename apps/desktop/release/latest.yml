@@ -1,0 +1,8 @@
+version: 0.17.0
+files:
+  - url: PoorMad-0.17.0-win-x64.exe
+    sha512: 36kTasjqRGFyMuZcxZJKhkHchrgVGuzoXmSjEVZgtolhvcyHEa9z9dVHhuVWDwfPZh+qRH8VPE5n5EGMkD29SA==
+    size: 112653705
+path: PoorMad-0.17.0-win-x64.exe
+sha512: 36kTasjqRGFyMuZcxZJKhkHchrgVGuzoXmSjEVZgtolhvcyHEa9z9dVHhuVWDwfPZh+qRH8VPE5n5EGMkD29SA==
+releaseDate: '2026-08-28T17:27:05.300Z'
